@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Dirt Removal</title>
+</head>
+<body>
+<h1>Upload a Dirty Car Image</h1>
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="image" accept="image/*" required>
+    <button type="submit">Upload</button>
+</form>
+{% if filename %}
+<h2>Result:</h2>
+<img src="{{ url_for('static', filename=filename) }}" alt="Cleaned Car">
+{% endif %}
+</body>
+</html>
